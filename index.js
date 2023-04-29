@@ -3,7 +3,7 @@ import cors from "cors"
 import mongoose from "mongoose"
 import cookieParser from 'cookie-parser';
 import bcrypt from 'bcrypt';
-const PORT = 9002
+const PORT = process.env.PORT || 9002
 const app = express()
 app.use(express.json())
 app.use(cookieParser());
@@ -107,6 +107,8 @@ app.get('/inventory', (req, res) => {
         }
     });
 });
+
+
 
 
 app.listen(PORT, () => {
